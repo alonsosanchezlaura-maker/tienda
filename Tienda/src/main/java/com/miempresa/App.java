@@ -27,5 +27,8 @@ public class App
 
         // Calcular y mostrar el precio total
         System.out.println("\n💰 Precio total: $" + tienda.calcularPrecioTotal());
+        for (Producto p : tienda.obtenerProductos()) {
+			System.out.println("- " + p.getNombre() + ": $" + p.getPrecio());
+		}
     }
 }
