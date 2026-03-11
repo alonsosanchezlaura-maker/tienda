@@ -9,7 +9,8 @@ import java.util.List;
  * y calcular el precio total de todos los productos en la tienda.
  */
 public class Tienda {
-    private List<Producto> productos;
+    private List<Producto> productos;	
+    
 
   
     public Tienda() {
