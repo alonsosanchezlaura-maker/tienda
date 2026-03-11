@@ -63,4 +63,25 @@ public class Producto {
         }
         this.precio = precio;
     }
+    
+    /**
+     * Duplica el precio actual del producto.
+     */
+    public void duplicarPrecio() {
+        setPrecio(getPrecio() * 2); 
+        // reutiliza la validación de setPrecio
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
