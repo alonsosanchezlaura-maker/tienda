@@ -13,8 +13,6 @@ class TiendaTest {
 	void setUp() throws Exception {
 	}
 
-	
-	
 	@Test
     void testAgregarProducto() {
         Tienda tienda = new Tienda();
