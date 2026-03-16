@@ -8,19 +8,20 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TiendaTest {
-
+	
 	@BeforeEach
 	void setUp() throws Exception {
+		
+		
 	}
 
-	@Test
+	@Test 
     void testAgregarProducto() {
         Tienda tienda = new Tienda();
         Producto p = new Producto("Laptop", 1000);
-
         tienda.agregarProducto(p);
-
         assertEquals(1, tienda.obtenerProductos().size());
+        
     }
 
     @Test

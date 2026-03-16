@@ -2,8 +2,14 @@ package com.miempresa.entidad;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 class ProductoTest {
+Producto producto;
+@BeforeEach
+void setUp() throws Exception {
+	producto = new Producto("Laptop", 1000);
+}
 
 	
 
@@ -23,6 +29,7 @@ class ProductoTest {
 
 	    @Test
 	    void testSetNombre() {
+	    	
 	        Producto p = new Producto("Laptop", 1000);
 
 	        p.setNombre("Tablet");
@@ -32,28 +39,24 @@ class ProductoTest {
 
 	    @Test
 	    void testSetPrecio() {
+	       double resultadoEsperado = 1000;
 	        Producto p = new Producto("Laptop", 1000);
 
-	        p.setPrecio(500);
+	        p.setPrecio(resultadoEsperado);
 
-	        assertEquals(500, p.getPrecio());
+	        assertEquals(resultadoEsperado, p.getPrecio());
 	    }
 
 	    @Test
 	    void testSetPrecioNegativo() {
-	    		        Producto p = new Producto("Laptop", 1000);
-
-	        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-	            p.setPrecio(-100);
-	        });
-
-	        String expectedMessage = "El precio no puede ser negativo";
-	        String actualMessage = exception.getMessage();
-
-	        assertTrue(actualMessage.contains(expectedMessage));
-
-	        
+	        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> producto.setPrecio(-100.0));
+	       
+	        String mensajeEsperado = "El precio no puede ser negativo: -100.0";
+	        String mensajeActual = exception.getMessage();
+	        assertEquals(mensajeEsperado, mensajeActual);
 	    }
+	        
+
 	}
 
 

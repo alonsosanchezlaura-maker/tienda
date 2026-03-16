@@ -70,6 +70,7 @@ public class Producto {
     public void duplicarPrecio() {
         setPrecio(getPrecio() * 2); 
         // reutiliza la validación de setPrecio
+        
     }
     
     
